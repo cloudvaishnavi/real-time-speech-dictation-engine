@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Real-time Speech-to-Text with Correction</title>
+    <link rel="stylesheet" href="frontend.css" />
+</head>
+<body>
+    <div class="container">
+        <h1>Real-time Speech-to-Text</h1>
+
+        <!-- RECORDING CONTROLS -->
+        <div class="controls">
+            <button id="startBtn" type="button">Start Recording</button>
+            <button id="stopBtn" type="button" disabled>Stop Recording</button>
+        </div>
+
+        <!-- ⭐ FEATURE 5: TONE / STYLE SELECTOR -->
+        <div class="tone-selector">
+            <label for="toneSelect">Select Output Tone</label>
+            <select id="toneSelect">
+                <option value="neutral" selected>Neutral</option>
+                <option value="formal">Formal</option>
+                
+                <option value="short">Concise</option>
+                <option value="friendly">Friendly</option>
+                <option value="expanded">Expanded</option>
+            </select>
+        </div>
+        <!-- ⭐ LIVE SPEAKING INSIGHTS -->
+<div class="insights-panel">
+    <div class="insight-box">
+        <span class="label">Words</span>
+        <span id="wordCount">0</span>
+    </div>
+
+    <div class="insight-box">
+        <span class="label">Time</span>
+        <span id="timeElapsed">0s</span>
+    </div>
+
+    <div class="insight-box">
+        <span class="label">Speed</span>
+        <span id="wpm">0 WPM</span>
+    </div>
+
+    <div class="insight-box">
+        <span class="label">Clarity</span>
+        <span id="clarityLevel">—</span>
+    </div>
+</div>
+
+
+        <!-- TEXT AREAS -->
+        <div class="textareas">
+            <div class="textarea-group">
+                <label for="rawText">Live Raw Text</label>
+                <textarea id="rawText" readonly aria-live="polite" rows="10"
+                    placeholder="Your speech will appear here..."></textarea>
+            </div>
+
+            <div class="textarea-group">
+                <label for="correctedText">Corrected Text</label>
+                <textarea id="correctedText" readonly aria-live="polite" rows="10"
+                    placeholder="Corrected text will appear here..."></textarea>
+                <!-- ⭐ SPEED DISPLAY -->
+<div id="latencyDisplay" class="latency-display">
+    ⚡ Processing time: --
+</div>
+                <!-- FEATURE 3 -->
+                <button id="downloadTxtBtn" class="download-btn" type="button">
+                    Download as TXT
+                </button>
+            </div>
+        </div>
+
+        <!-- ⭐ HISTORY SECTION -->
+        <div class="history-section">
+            <div class="history-header">
+                <h2>Transcription History</h2>
+                <button id="toggleHistoryBtn" type="button">Show History</button>
+            </div>
+
+            <div id="historyContent" style="display: none;">
+                <button id="loadHistoryBtn" type="button">Load History</button>
+                <ul id="historyList" class="history-list"></ul>
+
+                <!-- FEATURE 4 -->
+                <div class="export-buttons">
+                    <button id="exportTxtBtn" class="export-btn">Export TXT</button>
+                    <button id="exportJsonBtn" class="export-btn">Export JSON</button>
+                    <button id="exportPdfBtn" class="export-btn">Export PDF</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="frontend.js" type="module"></script>
+</body>
+</html>
