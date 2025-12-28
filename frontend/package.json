@@ -1,0 +1,13 @@
+{
+  "name": "speech-to-text-frontend",
+  "version": "1.0.0",
+  "description": "Frontend for real-time speech-to-text application",
+  "scripts": {
+    "start": "live-server --port=8080 --open=./index.html"
+  },
+  "author": "SpeechToTextApp",
+  "license": "MIT",
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  }
+}
