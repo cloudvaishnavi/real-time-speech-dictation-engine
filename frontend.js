@@ -22,7 +22,8 @@ const timeElapsedEl = document.getElementById("timeElapsed");
 const wpmEl = document.getElementById("wpm");
 const clarityLevelEl = document.getElementById("clarityLevel");
 
-const API_BASE_URL = "http://localhost:5000";
+const API_BASE_URL = "https://real-time-speech-dictation-engine.onrender.com";
+
 
 let recognition;
 let finalTranscript = "";
